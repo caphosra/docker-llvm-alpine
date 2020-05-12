@@ -8,6 +8,7 @@ ENV LLVM_DOWNLOAD_URL https://github.com/llvm/llvm-project/releases/download/llv
 RUN \
     apk update; \
     apk add --no-cache --virtual builddep \
+        alpine-sdk \
         build-base \
         util-linux-dev \
         ninja \
