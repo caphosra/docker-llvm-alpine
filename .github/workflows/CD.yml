@@ -24,4 +24,5 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: capra314cabra/llvm-alpine
           tags: ${{ steps.tagName.outputs.tag }}
+          build_args: memory=4g
           push: true
