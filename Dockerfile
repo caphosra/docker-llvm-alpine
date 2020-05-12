@@ -26,7 +26,7 @@ RUN \
 WORKDIR /tmp/llvm/build
 
 RUN \
-    cmake -G Ninja ..; \
+    cmake -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..; \
     ninja; \
     ninja install;
 
