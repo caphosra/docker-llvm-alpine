@@ -7,22 +7,15 @@ on:
 
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-      - uses: olegtarasov/get-tag@v2
-        id: tagName
       - uses: docker/build-push-action@v1
         id: buildDocker
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: capra314cabra/llvm-alpine
-          tags: ${{ steps.tagName.outputs.tag }}
-          build_args: memory=4g
-          push: true
+          tag_with_ref: true
+          build_args: --memory=4g
