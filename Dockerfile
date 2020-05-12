@@ -11,6 +11,7 @@ RUN \
         alpine-sdk \
         build-base \
         util-linux-dev \
+        python3 \
         ninja \
         cmake \
         wget;
