@@ -1,6 +1,6 @@
 FROM alpine:3.11
 
-ENV LLVM_FILE_VERSION 10.0.0
+ENV LLVM_FILE_VERSION 7.1.0
 
 ENV LLVM_ARCHIVE llvm-${LLVM_FILE_VERSION}.src.tar.xz
 ENV LLVM_DOWNLOAD_URL https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_FILE_VERSION}/${LLVM_ARCHIVE}
