@@ -1,4 +1,4 @@
-name: Deploy LLVM 10.0.0 to Docker Hub
+name: Deploy to Docker Hub
 
 on:
   push:
