@@ -28,7 +28,7 @@ RUN \
 WORKDIR /tmp/llvm/build
 
 RUN \
-    && set -e \
+    set -e \
     && cmake -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release .. \
     && ninja \
     && ninja install
