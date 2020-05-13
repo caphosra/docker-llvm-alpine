@@ -21,4 +21,6 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: capra314cabra/llvm-alpine
           tags: ${{ matrix.llvm-version }}
-          build_args: LLVM_FILE_VERSION=${{ matrix.llvm-version }} --memory=4g
+          build_args: LLVM_FILE_VERSION=$LLVM_FILE_VERSION,--memory=4g
+        env:
+          LLVM_FILE_VERSION: ${{ matrix.llvm-version }}
