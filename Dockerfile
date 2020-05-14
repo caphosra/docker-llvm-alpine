@@ -21,7 +21,7 @@ RUN \
     && apk add --no-cache --virtual rundep \
         libgcc \
         libstdc++ \
-    && mkdir /tmp \
+    && mkdir -p /tmp \
     && cd /tmp \
     && wget ${LLVM_DOWNLOAD_URL} \
     && tar xJf ${LLVM_ARCHIVE} \
