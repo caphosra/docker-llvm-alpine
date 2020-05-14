@@ -11,10 +11,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: docker/build-push-action@v1
-        id: buildDocker
+        id: build_full
         with:
           username: capra314cabra
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: capra314cabra/llvm-alpine
           tags: "9.0.1"
-          build_args: LLVM_FILE_VERSION=9.0.1,--memory=4g
+          path: ./llvm-alpine
+          build_args: LLVM_FILE_VERSION=9.0.1
+      - uses: docker/build-push-action@v1
+        id: build_libs_only
+        with:
+          username: capra314cabra
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: capra314cabra/llvm-alpine-libs
+          tags: "9.0.1"
+          path: ./llvm-alpine-libs
+          build_args: LLVM_FILE_VERSION=9.0.1

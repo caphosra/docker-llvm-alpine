@@ -33,4 +33,5 @@ RUN \
     && ninja install \
     && cd / \
     && apk del builddep --purge \
-    && rm -rf /tmp
+    && rm -rf /tmp \
+    && rm -rf /var/cache/apk/*
