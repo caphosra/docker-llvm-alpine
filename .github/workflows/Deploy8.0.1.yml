@@ -16,5 +16,5 @@ jobs:
           username: capra314cabra
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: capra314cabra/llvm-alpine
-          tags: ${{ matrix.llvm-version }}
+          tags: "8.0.1"
           build_args: LLVM_FILE_VERSION=8.0.1,--memory=4g
