@@ -1,4 +1,4 @@
-name: Deploy to Docker Hub
+name: Deploy LLVM 8.0.1 to Docker Hub
 
 on:
   push:
@@ -7,10 +7,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        llvm-version: ["8.0.1", "9.0.1", "10.0.0"]
 
     steps:
       - uses: actions/checkout@v2
@@ -21,6 +17,4 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: capra314cabra/llvm-alpine
           tags: ${{ matrix.llvm-version }}
-          build_args: LLVM_FILE_VERSION=$LLVM_FILE_VERSION,--memory=4g
-        env:
-          LLVM_FILE_VERSION: ${{ matrix.llvm-version }}
+          build_args: LLVM_FILE_VERSION=8.0.1,--memory=4g
